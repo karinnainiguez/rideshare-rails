@@ -7,7 +7,7 @@ class Driver < ApplicationRecord
   REV_PERCENT = 0.80
 
   def total_earnings
-    trips = Trip.all.select {|d| d.id == self.id}
+    trips = Trip.all.select {|t| t.driver_id == self.id}
 
     earnings_array = trips.map do |t|
       if t.cost < FEE_PER_TRIP
@@ -23,7 +23,7 @@ class Driver < ApplicationRecord
   end
 
   def average_rating
-    trips = Trip.all.select {|d| d.id == self.id}
+    trips = Trip.all.select {|t| t.driver_id == self.id}
 
     return 0 if trips.length == 0
 
@@ -38,7 +38,7 @@ class Driver < ApplicationRecord
   end
 
   def last_trip
-    trips = Trip.all.select {|d| d.id == self.id}
+    trips = Trip.all.select {|t| t.driver_id == self.id}
 
     last_trip = trips.max_by do |t|
       t.date
