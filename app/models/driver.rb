@@ -23,6 +23,17 @@ class Driver < ApplicationRecord
   end
 
   def average_rating
+    trips = Trip.all.select {|d| d.id == self.id}
+
+    return 0 if trips.length == 0
+
+    total_ratings = 0
+
+    trips.each do |t|
+      total_ratings += t.rating
+    end
+
+    return (total_ratings/trips.length).to_f
 
   end
 
