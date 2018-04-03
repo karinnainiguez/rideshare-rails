@@ -1,5 +1,6 @@
 class DriversController < ApplicationController
   def index
+    @drivers = Driver.all
   end
 
   def new
@@ -21,6 +22,6 @@ class DriversController < ApplicationController
   end
 
   def destroy
-    
+
   end
 end
