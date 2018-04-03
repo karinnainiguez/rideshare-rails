@@ -38,6 +38,13 @@ class Driver < ApplicationRecord
   end
 
   def last_trip
+    trips = Trip.all.select {|d| d.id == self.id}
+
+    last_trip = trips.max_by do |t|
+      t.date
+    end
+
+    return last_trip.date
 
   end
 
