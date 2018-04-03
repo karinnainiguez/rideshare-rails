@@ -8,7 +8,13 @@ class DriversController < ApplicationController
   end
 
   def create
+    @driver = Driver.new(driver_params)
 
+    if @driver.save
+      redirect_to '/drivers'
+    else
+      render :new
+    end
   end
 
   def show
@@ -23,6 +29,13 @@ class DriversController < ApplicationController
   end
 
   def destroy
+
+  end
+
+  private
+
+  def driver_params
+    return params.require(:driver).permit(:name, :vin, :car_make, :car_model)
 
   end
 end

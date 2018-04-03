@@ -1,10 +1,22 @@
+
+<%= render partial: "layouts/error_messages", locals: { model: @driver } %>
+
+
 <%= form_for @driver do |f| %>
+
+
 
   <%= f.label :name %>
   <%= f.text_field :name %>
 
   <%= f.label :vin %>
   <%= f.text_field :vin %>
+
+  <%= f.label :car_make %>
+  <%= f.text_field :car_make %>
+
+  <%= f.label :car_model %>
+  <%= f.text_field :car_model %>
 
   <%= f.submit %>
 
