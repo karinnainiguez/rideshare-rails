@@ -1,0 +1,15 @@
+<%= form_for @trip do |f| %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date, :disabled=>true %>
+
+  <%= f.label :cost %>
+  <%= f.number_field :cost, :disabled=>true %>
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+
+  <%= f.submit %>
+
+
+<% end %>
