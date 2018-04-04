@@ -7,15 +7,4 @@
 <h3>Last Trip</h3>
 <%= @driver.last_trip %>
 
-<section>Driver Trips</section>
-<%= @trips.each do |t| %>
-  <ul>
-    <li><%= t.id %></li>
-    <li><%= t.date %></li>
-    <li><%= t.driver.name %></li>
-    <li><%= t.passenger.name %></li>
-    <li><%= t.cost %></li>
-    <li><%= t.rating %></li>
-
-  </ul>
-<% end %>
+<%= render partial: "layouts/ride_table", locals: { title: "Driver"}%>

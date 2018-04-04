@@ -1,0 +1,14 @@
+
+
+
+<section><%=title%> Trips</section>
+<% @trips.each do |t| %>
+  <ul>
+    <li><%= t.id %></li>
+    <li><%= t.date %></li>
+    <li><%= t.driver.name %></li>
+    <li><%= t.passenger.name %></li>
+    <li><%= t.cost %></li>
+    <li><%= t.rating %></li>
+  </ul>
+<% end %>

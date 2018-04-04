@@ -21,6 +21,7 @@ class PassengersController < ApplicationController
     passenger_id = params[:id]
 
     @passenger = Passenger.find(passenger_id)
+    @trips = @passenger.trips
   end
 
   def edit

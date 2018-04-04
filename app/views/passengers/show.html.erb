@@ -2,3 +2,6 @@
 <%= @passenger.total_charges %>
 
 <%= link_to("Request a Ride", "/passengers/#{@passenger.id}/trips", method: :post )  %>
+
+
+<%= render partial: "layouts/ride_table", locals: { title: "Passenger"} %>
