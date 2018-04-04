@@ -21,6 +21,7 @@ class DriversController < ApplicationController
     driver_id = params[:id]
 
     @driver = Driver.find(driver_id)
+    @trips = @driver.trips
   end
 
   def edit

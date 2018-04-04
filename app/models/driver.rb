@@ -17,7 +17,7 @@ class Driver < ApplicationRecord
       end
     end
 
-    earnings = (earnings_array.reduce) * REV_PERCENT
+    earnings = (earnings_array.sum) * REV_PERCENT
 
     return earnings
   end
