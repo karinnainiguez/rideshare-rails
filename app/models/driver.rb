@@ -48,5 +48,13 @@ class Driver < ApplicationRecord
 
   end
 
+  def self.next_driver
+    drivers = Driver.all
+    next_driver = drivers.max_by do |d|
+      d.last_trip
+    end
+    return next_driver
+  end
+
 
 end
