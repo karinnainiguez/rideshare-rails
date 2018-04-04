@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'trips#index'
 
   resources :trips
+  get '/trips/new/:id', to: 'trips#new', as: 'requested_trip'
 
   resources :drivers
 
