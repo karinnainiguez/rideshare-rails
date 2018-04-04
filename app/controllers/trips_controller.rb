@@ -12,8 +12,7 @@ class TripsController < ApplicationController
 
     if pass_id
       @trip = Trip.new(passenger_id: params[:passenger_id])
-      # @trip.driver = Driver.first
-      # @trip.passenger = Passenger.find(pass_id)
+      @trip.driver = Driver.first
       @trip.date = Date.today
     end
 

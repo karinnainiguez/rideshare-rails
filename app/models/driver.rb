@@ -19,7 +19,7 @@ class Driver < ApplicationRecord
 
     earnings = (earnings_array.sum) * REV_PERCENT
 
-    return earnings
+    return (earnings/100.00).round(2)
   end
 
   def average_rating

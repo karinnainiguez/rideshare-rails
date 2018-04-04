@@ -1,5 +1,21 @@
-<h3>Total Charges</h3>
-<%= @passenger.total_charges %>
+
+<h3>Details about our favorite passenger, <%= @passenger.name %></h3>
+
+<ul>
+  <li>
+    Passenger ID: <%= @passenger.id %>
+  </li>
+  <li>
+    Name: <%= @passenger.name %>
+  </li>
+  <li>
+    Phone Number: <%= @passenger.phone_num %>
+  </li>
+  <li>
+    Total Spent: <%= @passenger.total_charges %>
+  </li>
+</ul>
+
 
 <%= link_to("Request a Ride", "/passengers/#{@passenger.id}/trips", method: :post )  %>
 

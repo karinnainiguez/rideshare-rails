@@ -4,7 +4,7 @@
 <section><%=title%> Trips</section>
 <% @trips.each do |t| %>
   <ul>
-    <li><%= t.id %></li>
+    <li><%= link_to("#{t.id}", trip_path(t.id)) %></li>
     <li><%= t.date %></li>
     <li><%= t.driver.name %></li>
     <li><%= t.passenger.name %></li>

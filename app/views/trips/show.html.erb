@@ -1,4 +1,21 @@
 
-<h3>SHOW PAGE FOR</h3>
+<h3>Details about Trip # <%= @trip.id %></h3>
 
-<%= @trip %>
+<ul>
+  <li>
+    Trip ID: <%= @trip.id%>
+  </li>
+  <li>
+    Driver Name: <%= link_to("#{@trip.driver.name}", driver_path(@trip.driver.id)) %>
+  </li>
+  <li>
+    Passenger Name: <%= link_to("#{@trip.passenger.name}", passenger_path(@trip.passenger.id)) %>
+  </li>
+  </li>
+  <li>
+    Total Cost: <%= @trip.cost %>
+  </li>
+  <li>
+    Rating: <%= @trip.rating %>
+  </li>
+</ul>
