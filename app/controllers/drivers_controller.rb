@@ -25,7 +25,7 @@ class DriversController < ApplicationController
   end
 
   def edit
-
+    @driver = Driver.find(params[:id])
   end
 
   def update
