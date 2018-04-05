@@ -1,15 +1,107 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+body {
+  background-color: lightgrey;
+  margin: 0;
+}
+
+header nav {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 8vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: auto;
+}
+
+nav ul li {
+  float: left;
+  width: 15vw;
+  text-align: center;
+  border-right: white solid 1px;
+}
+
+nav ul li:first-child {
+  width: 30vw;
+  font-size: 1.25em;
+  text-align: left;
+}
+
+nav ul li:last-child {
+  border: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+main {
+  /* margin-top: 5vh; */
+  height: 75vh;
+  padding: 8vh 5vh;
+  overflow-x: scroll;
+}
+
+footer {
+  background-color: black;
+  color: lightgrey;
+  height: 8vh;
+  text-align: center;
+}
+
+.trips ul {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 3fr 2fr 2fr;
+}
+
+.trips .labels {
+  background-color: darkgrey;
+  font-weight: bold;
+}
+
+.trips ul li {
+  border: black solid .5px;
+  padding: 5px;
+}
+
+
+.user-list {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+}
+
+#drivers {
+  grid-template-columns: 3fr 2fr 3fr;
+}
+
+.user-list .label {
+  font-size: 1.25em;
+  font-weight: bold;
+  padding: 1vh 3vw;
+}
+
+.user-list li {
+  margin: 1vh;
+}
+
+.user-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.user-list li a:hover {
+  font-weight: bold;
+}
+
+.user-list li div {
+  display: inline-block;
+  padding-right: 3vw;
+}

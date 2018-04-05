@@ -1,7 +1,13 @@
 
-
-
-<section><%=title%> Trips</section>
+<section class=trips><h3><%=title%> Trips</h3>
+  <ul class=labels>
+    <li>ID</li>
+    <li>Trip Date</li>
+    <li>Driver Name</li>
+    <li>Passenger Name</li>
+    <li>Cost</li>
+    <li>Rating</li>
+  </ul>
 <% @trips.each do |t| %>
   <ul>
     <li><%= link_to("#{t.id}", trip_path(t.id)) %></li>
@@ -12,3 +18,4 @@
     <li><%= t.rating %></li>
   </ul>
 <% end %>
+</section>
