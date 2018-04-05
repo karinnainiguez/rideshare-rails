@@ -10,7 +10,7 @@
   <li><%= driver.average_rating %> </li>
   <li>
     <div><%= link_to( "Edit", edit_driver_path(driver) )%></div>
-    <div><%= link_to( "Delete", driver_path(driver) )%></div>
+    <div><%= link_to( "Delete", driver_path(driver.id), method: :delete )%></div>
   </li>
 <% end %>
 </ul>

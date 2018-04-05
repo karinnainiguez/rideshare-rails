@@ -49,6 +49,20 @@ class Driver < ApplicationRecord
     return trips.order(:date).first
   end
 
+  def deactivate_user
+    trips = self.trips
+    system_driver = Driver.where(name: "PREVIOUS USER").first
+
+    if system_driver == nil
+      system_driver = Driver.create(name: "PREVIOUS USER")
+    end
+
+    trips.each do |t|
+      t.driver = system_driver
+      t.save
+    end
+  end
+
   def self.next_driver
     drivers = self.all
     trip_array = drivers.map {|d| d.last_trip}
@@ -56,6 +70,7 @@ class Driver < ApplicationRecord
 
     return oldest_trip.driver
   end
+
 
 
 end
