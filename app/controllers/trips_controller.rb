@@ -12,6 +12,7 @@ class TripsController < ApplicationController
       @trip = Trip.new(passenger_id: params[:passenger_id])
       @trip.driver = Driver.next_driver
       @trip.date = Date.today
+      @trip.cost = random_cost
     end
 
     if @trip.save
@@ -28,11 +29,18 @@ class TripsController < ApplicationController
   end
 
   def edit
-
+    @trip = Trip.find(params[:id])
   end
 
   def update
+    @trip = Trip.find(params[:id])
+    @trip.assign_attributes(trip_params)
 
+    if @trip.save
+      redirect_to trip_path(@trip)
+    else
+      render :edit
+    end
   end
 
   def destroy

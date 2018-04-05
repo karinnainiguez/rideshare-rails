@@ -16,8 +16,8 @@
   </li>
 </ul>
 
-
 <%= link_to("Request a Ride", "/passengers/#{@passenger.id}/trips", method: :post )  %>
 
+<%= link_to("Edit", edit_passenger_path(@passenger)) %>
 
 <%= render partial: "layouts/ride_table", locals: { title: "Passenger"} %>

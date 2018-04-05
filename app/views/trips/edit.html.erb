@@ -1,0 +1,34 @@
+<%= render partial: "layouts/error_messages", locals: { model: @trip } %>
+
+<ul>
+  <%= form_for @trip do |f| %>
+
+  <li>
+    <%= f.label :date %>
+    <%= f.date_field :date, :disabled=>true %>
+  </li>
+
+  <li>
+    Driver: <%= @trip.driver.name %>
+  </li>
+
+  <li>
+    Passenger: <%= @trip.passenger.name %>
+  </li>
+
+  <li>
+  <%= f.label :cost %>
+  <%= f.number_field :cost, :disabled=>true %>
+  </li>
+
+  <li>
+  <%= f.label :rating %>
+  <%= f.select :rating, [1,2,3,4,5] %>
+  </li>
+
+  <li>
+  <%= f.submit %>
+  </li>
+
+  <% end %>
+</ul>

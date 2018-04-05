@@ -25,11 +25,18 @@ class PassengersController < ApplicationController
   end
 
   def edit
-
+    @passenger = Passenger.find(params[:id])
   end
 
   def update
+    @passenger = Passenger.find(params[:id])
+    @passenger.assign_attributes(passenger_params)
 
+    if @passenger.save
+      redirect_to passenger_path(@passenger)
+    else
+      render :edit
+    end
   end
 
   def destroy

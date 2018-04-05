@@ -13,9 +13,13 @@
   </li>
   </li>
   <li>
-    Total Cost: <%= @trip.cost %>
+    Total Cost: $<%= @trip.total_cost %>
   </li>
   <li>
     Rating: <%= @trip.rating %>
+  </li>
+  <li>
+    <div><%= link_to( "Edit", edit_trip_path(@trip) )%></div>
+    <div><%= link_to( "Delete", trip_path(@trip) )%></div>
   </li>
 </ul>
