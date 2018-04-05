@@ -4,10 +4,12 @@ class Passenger < ApplicationRecord
   validates :name, presence: true
 
   def total_charges
-    trips = Trip.all.select { |t| t.passenger_id == self.id }
+    trips = self.trips
+
+    return 0 if trips.length == 0
 
     charges_array = trips.map do |t|
-      t.cost
+      t.cost ? t.cost : 0
     end
 
     total_charges = charges_array.sum

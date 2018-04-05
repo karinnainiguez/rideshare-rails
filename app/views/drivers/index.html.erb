@@ -1,14 +1,11 @@
 <h1>Drivers#index</h1>
 <p>Find me in app/views/drivers/index.html.erb</p>
 
-
-
-
 <ul class="drivers-list">
 <% @drivers.each do |driver| %>
 <li>
-  <div><%= driver.name %></div>
-  <div>this is a rating</div>
+  <div><%= link_to("#{driver.name}", driver_path(driver)) %></div>
+  <div><%= driver.average_rating %> </div>
 </li>
 
 <% end %>

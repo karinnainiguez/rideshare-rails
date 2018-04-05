@@ -7,10 +7,12 @@ class Driver < ApplicationRecord
   REV_PERCENT = 0.80
 
   def total_earnings
-    trips = Trip.all.select {|t| t.driver_id == self.id}
+    trips = self.trips
+
+    return 0 if trips.length == 0
 
     earnings_array = trips.map do |t|
-      if t.cost < FEE_PER_TRIP
+      if t.cost == nil || t.cost < FEE_PER_TRIP
         0
       else
         t.cost - FEE_PER_TRIP
@@ -23,37 +25,36 @@ class Driver < ApplicationRecord
   end
 
   def average_rating
-    trips = Trip.all.select {|t| t.driver_id == self.id}
+    trips = self.trips
 
     return 0 if trips.length == 0
 
     total_ratings = 0
+    rated_trips = 0
 
     trips.each do |t|
-      total_ratings += t.rating
+      if t.rating
+        total_ratings += t.rating
+        rated_trips += 1
+      end
     end
 
-    return (total_ratings/trips.length).to_f
+    return (total_ratings/rated_trips).to_f
 
   end
 
   def last_trip
-    trips = Trip.all.select {|t| t.driver_id == self.id}
+    trips = self.trips
 
-    last_trip = trips.max_by do |t|
-      t.date
-    end
-
-    return last_trip.date
-
+    return trips.order(:date).first
   end
 
   def self.next_driver
-    drivers = Driver.all
-    next_driver = drivers.max_by do |d|
-      d.last_trip
-    end
-    return next_driver
+    drivers = self.all
+    trip_array = drivers.map {|d| d.last_trip}
+    oldest_trip = trip_array.compact.max_by {|t| (Date.today - t.date).to_i }
+
+    return oldest_trip.driver
   end
 
 

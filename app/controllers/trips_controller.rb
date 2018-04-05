@@ -3,8 +3,6 @@ class TripsController < ApplicationController
   end
 
   def new
-
-    @trip = Trip.new(date: Date.today, cost: random_cost)
   end
 
   def create
@@ -12,7 +10,7 @@ class TripsController < ApplicationController
 
     if pass_id
       @trip = Trip.new(passenger_id: params[:passenger_id])
-      @trip.driver = Driver.first
+      @trip.driver = Driver.next_driver
       @trip.date = Date.today
     end
 
