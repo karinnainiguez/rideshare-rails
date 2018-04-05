@@ -1,10 +1,27 @@
-<h3>Total Earnings</h3>
-<%= @driver.total_earnings %>
+<h3>Details about our favorite driver, <%= @driver.name %></h3>
 
-<h3>Average Rating</h3>
-<%= @driver.average_rating %>
-
-<h3>Last Trip</h3>
-<%= @driver.last_trip %>
+<ul>
+  <li>
+    Driver ID: <%= @driver.id %>
+  </li>
+  <li>
+    Name: <%= @driver.name %>
+  </li>
+  <li>
+    Car Make: <%= @driver.car_make %>
+  </li>
+  <li>
+    Car Model: <%= @driver.car_model %>
+  </li>
+  <li>
+    Total Earnings: <%= @driver.total_earnings %>
+  </li>
+  <li>
+    Average Rating: <%= @driver.average_rating %>
+  </li>
+  <li>
+    Last Trip: <%= @driver.last_trip %>
+  </li>
+</ul>
 
 <%= render partial: "layouts/ride_table", locals: { title: "Driver"}%>

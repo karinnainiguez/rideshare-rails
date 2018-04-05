@@ -9,6 +9,30 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to("Rideshare Rails!", root_path) %>
+          </li>
+          <li>
+            <%= link_to("Drivers", drivers_path) %>
+          </li>
+          <li>
+            <%= link_to("Add a Driver", new_driver_path) %>
+          </li>
+          <li>
+            <%= link_to("Passengers", passengers_path) %>
+          </li>
+          <li>
+            <%= link_to("Add a Passenger", new_passenger_path) %>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <%= yield %>
+    <footer>
+      <h6>&copy;2018 Karinna + Anne</h6>
+    </footer>
   </body>
 </html>
