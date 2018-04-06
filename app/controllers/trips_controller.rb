@@ -25,7 +25,10 @@ class TripsController < ApplicationController
 
   def show
     trip_id = params[:id]
-    @trip = Trip.find(trip_id)
+    @trip = Trip.find_by(id: trip_id)
+    if @trip == nil
+      redirect_to catch_all_index_path
+    end
   end
 
   def edit

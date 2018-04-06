@@ -20,8 +20,13 @@ class PassengersController < ApplicationController
   def show
     passenger_id = params[:id]
 
-    @passenger = Passenger.find(passenger_id)
-    @trips = @passenger.trips
+    @passenger = Passenger.find_by(id: passenger_id)
+
+    if @passenger == nil
+      redirect_to catch_all_index_path
+    else
+      @trips = @passenger.trips
+    end
   end
 
   def edit

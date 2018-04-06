@@ -46,7 +46,7 @@ class Driver < ApplicationRecord
   def last_trip
     trips = self.trips
 
-    return trips.order(:date).first.date
+    return trips.order(:date).first
   end
 
   def deactivate_user
