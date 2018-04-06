@@ -67,7 +67,7 @@ a:hover {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 2fr 3fr 3fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 3fr 3fr 1fr 1fr 1fr;
 }
 
 .trips .labels {
@@ -133,4 +133,13 @@ a:hover {
   width: 90vw;
   border-radius: 10%;
   border: black solid 2px;
+}
+
+form {
+  padding: 5vh;
+}
+
+form input {
+  margin: 3vw;
+  padding: 2vw;
 }

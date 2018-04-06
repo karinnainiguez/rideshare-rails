@@ -7,6 +7,7 @@
     <li>Passenger Name</li>
     <li>Cost</li>
     <li>Rating</li>
+    <li>Actions</li>
   </ul>
 <% @trips.each do |t| %>
   <ul>
@@ -16,6 +17,7 @@
     <li><%= link_to(t.passenger.name, passenger_path(t.passenger)) %></li>
     <li>$<%= t.total_cost %></li>
     <li><%= t.rating %></li>
+    <li><%= link_to( "Edit", edit_trip_path(t) )%></li>
   </ul>
 <% end %>
 </section>
