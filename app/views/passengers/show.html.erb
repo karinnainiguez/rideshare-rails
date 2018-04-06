@@ -12,11 +12,11 @@
     Phone Number: <%= @passenger.phone_num %>
   </li>
   <li>
-    Total Spent: <%= @passenger.total_charges %>
+    Total Spent: $<%= @passenger.total_charges %>
   </li>
 </ul>
 
-<%= link_to("Request a Ride", "/passengers/#{@passenger.id}/trips", method: :post )  %>
+<%= link_to("Request a Ride", "/passengers/#{@passenger.id}/trips", method: :post)  %>
 
 <%= link_to("Edit", edit_passenger_path(@passenger)) %>
 

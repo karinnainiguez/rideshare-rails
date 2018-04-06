@@ -12,8 +12,8 @@
   <ul>
     <li><%= link_to("#{t.id}", trip_path(t.id)) %></li>
     <li><%= t.date %></li>
-    <li><%= t.driver.name %></li>
-    <li><%= t.passenger.name %></li>
+    <li><%= link_to(t.driver.name, driver_path(t.driver)) %></li>
+    <li><%= link_to(t.passenger.name, passenger_path(t.passenger)) %></li>
     <li>$<%= t.total_cost %></li>
     <li><%= t.rating %></li>
   </ul>

@@ -53,6 +53,16 @@ footer {
   text-align: center;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+
 .trips ul {
   padding: 0;
   margin: 0;
@@ -68,6 +78,15 @@ footer {
 .trips ul li {
   border: black solid .5px;
   padding: 5px;
+}
+
+.trips ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+.trips ul li a:hover {
+  font-weight: bold;
 }
 
 

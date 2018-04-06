@@ -21,7 +21,7 @@ class Driver < ApplicationRecord
 
     earnings = (earnings_array.sum) * REV_PERCENT
 
-    return (earnings/100.00).round(2)
+    return sprintf("%.02f", earnings / 100.00)
   end
 
   def average_rating
@@ -46,7 +46,7 @@ class Driver < ApplicationRecord
   def last_trip
     trips = self.trips
 
-    return trips.order(:date).first
+    return trips.order(:date).first.date
   end
 
   def deactivate_user

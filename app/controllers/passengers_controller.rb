@@ -40,7 +40,12 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    @passenger = Passenger.find(params[:id])
+    @passenger.deactivate_user
 
+    @passenger.destroy
+
+    redirect_to passengers_path
   end
 
   private
